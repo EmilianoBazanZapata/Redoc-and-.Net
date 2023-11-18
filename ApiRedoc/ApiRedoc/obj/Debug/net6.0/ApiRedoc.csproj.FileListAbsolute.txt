@@ -30,3 +30,4 @@ C:\Users\emili\OneDrive\Escritorio\Redoc\Redoc\ApiRedoc\ApiRedoc\obj\Debug\net6.
 C:\Users\emili\OneDrive\Escritorio\Redoc\Redoc\ApiRedoc\ApiRedoc\obj\Debug\net6.0\ApiRedoc.pdb
 C:\Users\emili\OneDrive\Escritorio\Redoc\Redoc\ApiRedoc\ApiRedoc\obj\Debug\net6.0\ApiRedoc.genruntimeconfig.cache
 C:\Users\emili\OneDrive\Escritorio\Redoc\Redoc\ApiRedoc\ApiRedoc\obj\Debug\net6.0\ref\ApiRedoc.dll
+C:\Users\emili\OneDrive\Escritorio\Redoc\Redoc\ApiRedoc\ApiRedoc\obj\Debug\net6.0\ApiRedoc.sourcelink.json
