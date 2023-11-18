@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiRedoc")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6da8f22a6e77df0e3867f65e7fbc0c5e48f0631b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+447140f8a2a9dbcc244f0e67721e986245d65128")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiRedoc")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiRedoc")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

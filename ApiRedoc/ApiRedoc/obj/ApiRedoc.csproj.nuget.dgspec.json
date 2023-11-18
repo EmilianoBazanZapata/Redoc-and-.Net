@@ -40,7 +40,15 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "NSwag.AspNetCore": {
+              "target": "Package",
+              "version": "[14.0.0-preview010, )"
+            },
             "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            },
+            "Swashbuckle.AspNetCore.ReDoc": {
               "target": "Package",
               "version": "[6.5.0, )"
             }
