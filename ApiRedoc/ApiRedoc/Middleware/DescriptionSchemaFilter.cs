@@ -5,7 +5,7 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace ApiRedoc.Middleware
 {
-    public class DescriptionSchemaFilter : ISchemaFilter
+    public class DescriptionSchemaFilter : ISchemaFilter 
     {
         //Middleware for add Description in properties of the Entities
         public void Apply(OpenApiSchema schema, SchemaFilterContext context)
