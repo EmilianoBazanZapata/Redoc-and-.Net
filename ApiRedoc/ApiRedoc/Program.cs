@@ -1,17 +1,50 @@
-using System.Reflection;
-using Microsoft.AspNetCore.Identity;
+﻿using ApiRedoc;
+using ApiRedoc.Controllers;
 using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.SwaggerGen;
+using System.Reflection;
+using ApiRedoc.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
 
-//Add Redoc
+    c.DocInclusionPredicate((docName, apiDesc) =>
+    {
+        if (apiDesc.TryGetMethodInfo(out var methodInfo))
+        {
+            return methodInfo.DeclaringType == typeof(TodoController);
+        }
+        return false;
+    });
+});
+//Select a specific controller for ReDoc
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("doc", new OpenApiInfo { Title = "My Redoc API", Version = "doc" });
+
+    c.DocInclusionPredicate((docName, apiDesc) =>
+    {
+        if (apiDesc.TryGetMethodInfo(out var methodInfo))
+        {
+            return methodInfo.DeclaringType == typeof(TodoRedocController);
+        }
+        return false;
+    });
+    
+    c.SchemaFilter<DescriptionSchemaFilter>(); 
+    
+    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    c.IncludeXmlComments(xmlPath);
+    c.EnableAnnotations();
+
+});
+
 builder.Services.AddSwaggerDocument(config =>
 {
     config.PostProcess = document =>
@@ -23,21 +56,15 @@ builder.Services.AddSwaggerDocument(config =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+app.UseSwaggerUI();
+app.UseOpenApi();
+app.UseSwagger();
+//Activate ReDoc
+app.UseReDoc(options =>
 {
-    app.UseSwaggerUI();
-    // Middleware for Redoc
-    app.UseOpenApi();
-    app.UseSwagger();
-    app.UseReDoc(options =>
-    {
-        options.DocumentTitle = "Swagger Demo Documentation";
-        options.SpecUrl = "/swagger/v1/swagger.json";
-    });
-    
-}
-
+    options.DocumentTitle = "ReDoc Documentation";
+    options.SpecUrl = "/swagger/doc/swagger.json";
+});
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
