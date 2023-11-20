@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "jSG43DVSYMGKXioZDEwAGbCr/J1WmYW2ipjgrxb7xZS+gVB/v8XBT2kbNf+t9wy1yrQeU5gLSkkO3wQECDHJTA==",
+  "dgSpecHash": "xtPzUgubhvsoO8NV3H1RbXMphbnWli8cjhpylAl4pfNFLIdhnMSdlyvU2oScl6TfuhHYJ9LCTxQvhyrg/XL3sg==",
   "success": true,
   "projectFilePath": "C:\\Users\\emili\\OneDrive\\Escritorio\\Redoc\\Redoc\\ApiRedoc\\ApiRedoc\\ApiRedoc.csproj",
   "expectedPackageFiles": [
@@ -27,6 +27,7 @@
     "C:\\Users\\emili\\.nuget\\packages\\nswag.generation\\14.0.0-preview010\\nswag.generation.14.0.0-preview010.nupkg.sha512",
     "C:\\Users\\emili\\.nuget\\packages\\nswag.generation.aspnetcore\\14.0.0-preview010\\nswag.generation.aspnetcore.14.0.0-preview010.nupkg.sha512",
     "C:\\Users\\emili\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\emili\\.nuget\\packages\\swashbuckle.aspnetcore.annotations\\6.5.0\\swashbuckle.aspnetcore.annotations.6.5.0.nupkg.sha512",
     "C:\\Users\\emili\\.nuget\\packages\\swashbuckle.aspnetcore.redoc\\6.5.0\\swashbuckle.aspnetcore.redoc.6.5.0.nupkg.sha512",
     "C:\\Users\\emili\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\emili\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
