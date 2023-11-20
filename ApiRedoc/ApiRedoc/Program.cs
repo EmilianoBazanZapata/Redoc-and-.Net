@@ -55,8 +55,14 @@ builder.Services.AddSwaggerDocument(config =>
 });
 
 var app = builder.Build();
+app.UseStaticFiles();
 
-app.UseSwaggerUI();
+app.UseSwaggerUI(c =>
+{
+    c.InjectJavascript("/button-doc.js");
+    c.InjectStylesheet("/SwaggerDark.css");
+});
+
 app.UseOpenApi();
 app.UseSwagger();
 //Activate ReDoc
