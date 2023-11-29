@@ -4,45 +4,35 @@ using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Reflection;
 using ApiRedoc.Middleware;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c =>
+builder.Services.AddSwaggerGen(options =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+    options.SwaggerDoc("swagger", new OpenApiInfo { Title = "Swagger API", Version = "v1" });
+    options.SwaggerDoc("redoc", new OpenApiInfo { Title = "Redoc API", Version = "v1" });
 
-    c.DocInclusionPredicate((docName, apiDesc) =>
+    // Filtrar controladores por grupo para Swagger
+    options.DocInclusionPredicate((docName, apiDesc) =>
     {
-        if (apiDesc.TryGetMethodInfo(out var methodInfo))
-        {
-            return methodInfo.DeclaringType == typeof(TodoController);
-        }
-        return false;
-    });
-});
-//Select a specific controller for ReDoc
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("doc", new OpenApiInfo { Title = "My Redoc API", Version = "doc" });
+        if (!apiDesc.TryGetMethodInfo(out var methodInfo)) return false;
 
-    c.DocInclusionPredicate((docName, apiDesc) =>
-    {
-        if (apiDesc.TryGetMethodInfo(out var methodInfo))
-        {
-            return methodInfo.DeclaringType == typeof(TodoRedocController);
-        }
-        return false;
+        var groupAttribute = methodInfo.DeclaringType.GetCustomAttributes(true)
+            .OfType<ApiExplorerSettingsAttribute>()
+            .FirstOrDefault();
+
+        return groupAttribute?.GroupName == docName;
     });
     
-    c.SchemaFilter<DescriptionSchemaFilter>(); 
+    options.SchemaFilter<DescriptionSchemaFilter>(); 
     
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-    c.IncludeXmlComments(xmlPath);
-    c.EnableAnnotations();
-
+    options.IncludeXmlComments(xmlPath);
+    options.EnableAnnotations();
 });
 
 builder.Services.AddSwaggerDocument(config =>
@@ -59,6 +49,7 @@ app.UseStaticFiles();
 
 app.UseSwaggerUI(c =>
 {
+    c.SwaggerEndpoint("/swagger/swagger/swagger.json", "Swagger API");
     c.InjectJavascript("/button-doc.js");
     c.InjectStylesheet("/SwaggerDark.css");
 });
@@ -69,7 +60,7 @@ app.UseSwagger();
 app.UseReDoc(options =>
 {
     options.DocumentTitle = "ReDoc Documentation";
-    options.SpecUrl = "/swagger/doc/swagger.json";
+    options.SpecUrl = "/swagger/redoc/swagger.json";
 });
 app.UseHttpsRedirection();
 

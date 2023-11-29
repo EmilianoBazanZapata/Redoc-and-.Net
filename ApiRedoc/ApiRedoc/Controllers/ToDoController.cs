@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ApiRedoc.Controllers;
 
+[ApiExplorerSettings(GroupName = "swagger")]
 [Route("api/[controller]")]
 [ApiController]
 public class TodoController : ControllerBase

@@ -1,5 +1,6 @@
 ﻿using Swashbuckle.AspNetCore.Annotations;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace ApiRedoc.ViewModels.Request
 {
@@ -12,6 +13,7 @@ namespace ApiRedoc.ViewModels.Request
         public int Id { get; set; }
         
         [Description("Name of the task to complete")]
+        [Required]
         public string Name { get; set; }
 
         [Description("Indicates whether the task was completed or not")]

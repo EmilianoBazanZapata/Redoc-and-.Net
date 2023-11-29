@@ -1,6 +1,14 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\emili\\OneDrive\\Escritorio\\Redoc\\Redoc\\ApiRedoc\\ApiRedoc\\wwwroot\\SwaggerDark.css",
+      "PackagePath": "staticwebassets\\SwaggerDark.css"
+    },
+    {
+      "Id": "C:\\Users\\emili\\OneDrive\\Escritorio\\Redoc\\Redoc\\ApiRedoc\\ApiRedoc\\wwwroot\\button-doc.js",
+      "PackagePath": "staticwebassets\\button-doc.js"
+    },
+    {
       "Id": "C:\\Users\\emili\\OneDrive\\Escritorio\\Redoc\\Redoc\\ApiRedoc\\ApiRedoc\\wwwroot\\redoc.html",
       "PackagePath": "staticwebassets\\redoc.html"
     },

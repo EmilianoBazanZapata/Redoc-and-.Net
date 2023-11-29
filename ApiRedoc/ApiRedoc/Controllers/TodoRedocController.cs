@@ -5,6 +5,7 @@ using Swashbuckle.AspNetCore.Annotations;
 
 namespace ApiRedoc.Controllers
 {
+    [ApiExplorerSettings(GroupName = "redoc")]
     [Route("api/[controller]")]
     [ApiController]
     public class TodoRedocController : ControllerBase
@@ -13,11 +14,12 @@ namespace ApiRedoc.Controllers
             Summary = "Get All Tasks",
             Description = "This endpoint will return all tasks, regardless of whether they are complete or not.",
             OperationId = "Get",
-            Tags = new[] { "ToDoRedoc" })]
+            Tags = new[] { "ToDoRedoc" }
+            )]
         [SwaggerResponse(200, "All Tasks registered", type: typeof(List<TodoItemResponseDocumentation>))]
         [SwaggerResponse(404, "Tasks Not Found")]
         [SwaggerResponse(500, "Internal Error")]
-        [HttpGet]
+        [HttpGet("tasks")]
         public ActionResult<IEnumerable<TodoItemRequestDocumentation>> Get()
         {
             var example = new List<TodoItemRequestDocumentation>()
@@ -54,7 +56,7 @@ namespace ApiRedoc.Controllers
         {
             var example = new TodoItemRequestDocumentation()
             {
-                Id = 1,
+                Id = id,
                 Name = "Task Test Data",
                 Completed = false
             };

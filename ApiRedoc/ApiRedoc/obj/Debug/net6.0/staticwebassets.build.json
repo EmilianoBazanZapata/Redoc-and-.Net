@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "f7+6Gzr5nmXc6Kyp4r+0TLvgcCNqa/z7cZHEFN006+k=",
+  "Hash": "Vyv0KfnXRU30sEMiZqE1RVwpwLkWGz2Sz6i/nPW8uBQ=",
   "Source": "ApiRedoc",
   "BasePath": "_content/ApiRedoc",
   "Mode": "Default",
@@ -16,6 +16,25 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\emili\\OneDrive\\Escritorio\\Redoc\\Redoc\\ApiRedoc\\ApiRedoc\\wwwroot\\button-doc.js",
+      "SourceId": "ApiRedoc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\emili\\OneDrive\\Escritorio\\Redoc\\Redoc\\ApiRedoc\\ApiRedoc\\wwwroot\\",
+      "BasePath": "_content/ApiRedoc",
+      "RelativePath": "button-doc.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\button-doc.js"
+    },
     {
       "Identity": "C:\\Users\\emili\\OneDrive\\Escritorio\\Redoc\\Redoc\\ApiRedoc\\ApiRedoc\\wwwroot\\redoc.html",
       "SourceId": "ApiRedoc",
@@ -34,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\redoc.html"
+    },
+    {
+      "Identity": "C:\\Users\\emili\\OneDrive\\Escritorio\\Redoc\\Redoc\\ApiRedoc\\ApiRedoc\\wwwroot\\SwaggerDark.css",
+      "SourceId": "ApiRedoc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\emili\\OneDrive\\Escritorio\\Redoc\\Redoc\\ApiRedoc\\ApiRedoc\\wwwroot\\",
+      "BasePath": "_content/ApiRedoc",
+      "RelativePath": "SwaggerDark.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\SwaggerDark.css"
     }
   ]
 }
